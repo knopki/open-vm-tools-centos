@@ -5,6 +5,7 @@ ConditionVirtualization=vmware
 After=network.service
 
 [Service]
+ExecStartPre=/bin/sleep 10
 ExecStart=$EXEC_START
 ExecStop=$EXEC_STOP
 WorkingDirectory=$DESTDIR
