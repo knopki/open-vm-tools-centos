@@ -1,0 +1,15 @@
+[Unit]
+Description=Service for virtual machines hosted on VMware
+Documentation=http://github.com/vmware/open-vm-tools
+ConditionVirtualization=vmware
+After=network.service
+
+[Service]
+ExecStart=$EXEC_START
+ExecStop=$EXEC_STOP
+WorkingDirectory=$DESTDIR
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
