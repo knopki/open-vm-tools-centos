@@ -1,4 +1,4 @@
-FROM centos
+FROM centos:7.3.1611
 
 LABEL summary="The open-vm-tools guest agent" \
       io.k8s.description="The open-vm-tools agent is providing information about the virtual machine and allows to restart / shutdown the machine via VMware products. This image is intended to be used with virtual machines running Centos Atomic Host." \
@@ -9,8 +9,9 @@ LABEL summary="The open-vm-tools guest agent" \
 
 ENV SYSTEMD_IGNORE_CHROOT=1
 
-RUN dnf -y --setopt=tsflags=nodocs install file open-vm-tools perl net-tools iproute systemd && \
-dnf clean all
+RUN yum -y --setopt=tsflags=nodocs update &&\
+  yum -y --setopt=tsflags=nodocs install file open-vm-tools perl net-tools iproute systemd && \
+  yum clean all
 
 COPY service.template config.json.template /exports/
 
