@@ -77,3 +77,7 @@ Removing the container
 ```
 # atomic uninstall open-vm-tools-centos
 ```
+
+
+# Note
+Was copied from https://github.com/projectatomic/atomic-system-containers/open-vm-tools-centos
