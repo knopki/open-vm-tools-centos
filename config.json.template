@@ -299,17 +299,6 @@
             ]
         },
         {
-            "destination": "/sys/fs/cgroup",
-            "type": "bind",
-            "source": "/sys/fs/cgroup",
-            "options": [
-                "rw",
-                "rbind",
-                "rprivate",
-                "ro"
-            ]
-        },
-        {
             "destination": "/hostproc",
             "type": "bind",
             "source": "/proc",
@@ -368,7 +357,7 @@
                 "rbind",
                 "rprivate"
             ]
-        },                      
+        },
         {
             "destination": "/etc/nsswitch.conf",
             "type": "bind",
