@@ -461,6 +461,17 @@
                 "relatime",
                 "ro"
             ]
+        },
+        {
+            "destination": "/sys/fs/cgroup",
+            "type": "bind",
+            "source": "/sys/fs/cgroup",
+            "options": [
+                "rw",
+                "rbind",
+                "rprivate",
+                "ro"
+            ]
         }
     ],
     "hooks": {},
